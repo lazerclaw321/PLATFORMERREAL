@@ -1,27 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class bluement : MonoBehaviour
 {
 
     public Rigidbody2D bluemove;
+    public Transform spawn;
+
     public float jumpStregnth;
     public float speed;
     public float gravitydown;
-    public Transform spawn;
+
+    public string hat = "None";
+
+    int level = 1;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Die()
     {
-        if (collision.gameObject.tag == "End")
+        hat = "None";
+        transform.position = spawn.position;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow) && collision.tag == "End")
         {
             Debug.Log("WOOOOOO");
+            level++;
+            SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && collision.tag == "Hat")
+        {
+            hat = "Jump";
+            Destroy(collision.gameObject);
         }
     }
 
@@ -30,10 +51,10 @@ public class bluement : MonoBehaviour
     {
         if (transform.position.y <= -5)
         {
-            transform.position = spawn.position;
+            Die();
         }
 
-        if (bluemove.velocity.y < 0.01f && Input.GetKeyDown(KeyCode.UpArrow) && bluemove.velocity.y > -0.01f)
+        if (hat == "Jump" && bluemove.velocity.y < 0.01f && Input.GetKeyDown(KeyCode.UpArrow) && bluemove.velocity.y > -0.01f)
         {
             bluemove.velocity = Vector2.up * jumpStregnth;
         }
