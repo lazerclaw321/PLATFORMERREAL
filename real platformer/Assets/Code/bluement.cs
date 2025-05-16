@@ -59,6 +59,7 @@ public class bluement : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
+            animator.SetBool("IsJumping", false);
         }
 
         
