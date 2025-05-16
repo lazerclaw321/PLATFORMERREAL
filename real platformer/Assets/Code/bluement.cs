@@ -9,6 +9,7 @@ public class bluement : MonoBehaviour
 
     public Rigidbody2D bluemove;
     public Transform spawn;
+    public Animator animator;
 
     public float jumpStregnth;
     public float speed;
@@ -56,6 +57,7 @@ public class bluement : MonoBehaviour
 
         if (hat == "Jump" && bluemove.velocity.y < 0.01f && Input.GetKeyDown(KeyCode.UpArrow) && bluemove.velocity.y > -0.01f)
         {
+            animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
         }
 
