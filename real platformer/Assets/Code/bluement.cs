@@ -34,13 +34,13 @@ public class bluement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && collision.tag == "End")
+        if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "End")
         {
             Debug.Log("WOOOOOO");
             level++;
             SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && collision.tag == "Hat")
+        if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "Hat")
         {
             animator.SetBool("JumpHat", true);
             hat = "Jump";

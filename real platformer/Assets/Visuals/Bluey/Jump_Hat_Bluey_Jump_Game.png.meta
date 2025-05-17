@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b14ae17f7722254d80b43febff35b8a
-      internalID: -1284055814
+      spriteID: 06af0610b980f8943a65f5f65ee3d29b
+      internalID: 1929681801
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60f9bf0e728b7984aa4839ccf429a99f
-      internalID: -1358979908
+      spriteID: 109e09db828da064aaa48e7f77154f7b
+      internalID: 793065016
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70825dc1868810c41ba4ca337881f46c
-      internalID: -1479632023
+      spriteID: 83e820ea15204884cb437ff6aeb4a655
+      internalID: 1008408159
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ea57ca657c8212438b2f2ae884f655f
-      internalID: -1726418086
+      spriteID: 24d742c6e9794084989926be71372089
+      internalID: 275997902
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ab25678d2adcd949b9e33c2a9a47e88
-      internalID: -1228228609
+      spriteID: f818b60a872793648b86d9ca40b80150
+      internalID: -480944097
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34d4d050647a91d4e83f9d2323b8b006
-      internalID: -271037835
+      spriteID: 97956ff2fe6de9b479e32b630dffc0a9
+      internalID: 668247553
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850c06aedf6df8b43906ba2b6571de05
-      internalID: 1752989436
+      spriteID: 45fabd99d29fde9459d0547dfe93637f
+      internalID: -1621806161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_Hat_Bluey_Jump_Game_7
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e85c14458acf974c8f78d1b506b2268
+      internalID: -921647754
       vertices: []
       indices: 
       edges: []
@@ -254,13 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jump_Hat_Bluey_Jump_Game_0: -1284055814
-      Jump_Hat_Bluey_Jump_Game_1: -1358979908
-      Jump_Hat_Bluey_Jump_Game_2: -1479632023
-      Jump_Hat_Bluey_Jump_Game_3: -1726418086
-      Jump_Hat_Bluey_Jump_Game_4: -1228228609
-      Jump_Hat_Bluey_Jump_Game_5: -271037835
-      Jump_Hat_Bluey_Jump_Game_6: 1752989436
+      Jump_Hat_Bluey_Jump_Game_0: 1929681801
+      Jump_Hat_Bluey_Jump_Game_1: 793065016
+      Jump_Hat_Bluey_Jump_Game_2: 1008408159
+      Jump_Hat_Bluey_Jump_Game_3: 275997902
+      Jump_Hat_Bluey_Jump_Game_4: -480944097
+      Jump_Hat_Bluey_Jump_Game_5: 668247553
+      Jump_Hat_Bluey_Jump_Game_6: -1621806161
+      Jump_Hat_Bluey_Jump_Game_7: -921647754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
