@@ -23,6 +23,7 @@ public class bluement : MonoBehaviour
     public int level;
 
     bool grounded = false;
+    GameObject thrown;
     Vector2 baseSize;
     Vector2 baseOffset;
     
@@ -58,6 +59,15 @@ public class bluement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "JumpHat")
+        {
+            Debug.Log("WOOOOO");
+            Physics2D.IgnoreCollision(hitbox, collision.gameObject.GetComponent<Collider2D>());
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -76,7 +86,6 @@ public class bluement : MonoBehaviour
         {
             hitbox.size = new Vector2(baseSize.x, baseSize.y * 1.75f);
             hitbox.offset = new Vector2(baseOffset.x, -(baseOffset.y + (baseSize.y / 1.75f) + 0.48f));
-            Debug.Log(hitbox.size);
         }
 
         //Hat Effects
@@ -92,9 +101,7 @@ public class bluement : MonoBehaviour
         {
             hat = "None";
             animator.SetBool("JumpHat", false);
-            Instantiate(jumpHatObject, Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), Input.mousePosition, throwspeed * Time.deltaTime), Quaternion.identity);
-            
-
+            thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
         }
         //Ground Check
         if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)

@@ -228,6 +228,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1154106378}
+    - target: {fileID: 1396647898660481353, guid: 756c22319454ba04e9aedba929a64118, type: 3}
+      propertyPath: jumpHatObject
+      value: 
+      objectReference: {fileID: 4064393387675564498, guid: 9171262a5b5f5d2409cbaf711a444392, type: 3}
     - target: {fileID: 1867767149892106279, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: m_Sprite
       value: 
