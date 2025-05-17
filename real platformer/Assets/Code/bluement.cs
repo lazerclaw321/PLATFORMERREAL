@@ -17,6 +17,8 @@ public class bluement : MonoBehaviour
     public float gravitydown;
 
     public string hat = "None";
+    public GameObject jumpHatObject;
+    public float throwspeed;
 
     public int level;
 
@@ -79,12 +81,21 @@ public class bluement : MonoBehaviour
 
         //Hat Effects
         //Jumping
-        if (hat == "Jump" && Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
             animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
         }
 
+        //Throw Hat
+        if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
+        {
+            hat = "None";
+            animator.SetBool("JumpHat", false);
+            Instantiate(jumpHatObject, Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), Input.mousePosition, throwspeed * Time.deltaTime), Quaternion.identity);
+            
+
+        }
         //Ground Check
         if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)
         {
@@ -95,7 +106,6 @@ public class bluement : MonoBehaviour
         {
             grounded = false;
         }
-        
 
         //Horizontal Movement
         bluemove.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, bluemove.velocity.y);
