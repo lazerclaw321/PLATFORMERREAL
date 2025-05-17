@@ -6,6 +6,7 @@ TagManager:
   tags:
   - End
   - Hat
+  - JumpHat
   layers:
   - Default
   - TransparentFX

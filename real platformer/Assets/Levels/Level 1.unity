@@ -213,9 +213,17 @@ PrefabInstance:
       value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1396647898660481353, guid: 756c22319454ba04e9aedba929a64118, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396647898660481353, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: spawn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1689475438}
+    - target: {fileID: 1396647898660481353, guid: 756c22319454ba04e9aedba929a64118, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 1154106380}
     - target: {fileID: 1396647898660481353, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: animator
       value: 
@@ -532,6 +540,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &1154106380 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1049542367794712460, guid: 756c22319454ba04e9aedba929a64118, type: 3}
+  m_PrefabInstance: {fileID: 450928471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1319964685
 PrefabInstance:
   m_ObjectHideFlags: 0
