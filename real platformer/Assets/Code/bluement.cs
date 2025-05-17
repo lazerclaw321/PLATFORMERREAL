@@ -97,11 +97,18 @@ public class bluement : MonoBehaviour
         }
 
         //Throw Hat
+        if (hat != "None" && Input.GetKeyDown(KeyCode.X))
+        {
+            hat = "None";
+            animator.SetBool("JumpHat", false);
+            thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
+        }
         if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
         {
             hat = "None";
             animator.SetBool("JumpHat", false);
             thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
+            thrown.GetComponent<Throw>().speed = thrown.GetComponent<Throw>().speed * -1;
         }
         //Ground Check
         if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)

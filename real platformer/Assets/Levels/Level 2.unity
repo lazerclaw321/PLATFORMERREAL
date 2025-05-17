@@ -1483,6 +1483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpHat
       objectReference: {fileID: 0}
+    - target: {fileID: 6653649731261106041, guid: 9171262a5b5f5d2409cbaf711a444392, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7546468694318485321, guid: 9171262a5b5f5d2409cbaf711a444392, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.13
