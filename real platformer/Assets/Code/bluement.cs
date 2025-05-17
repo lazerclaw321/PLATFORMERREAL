@@ -42,6 +42,7 @@ public class bluement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && collision.tag == "Hat")
         {
+            animator.SetBool("JumpHat", true);
             hat = "Jump";
             Destroy(collision.gameObject);
         }
@@ -59,8 +60,13 @@ public class bluement : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
+        }
+
+        if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)
+        {
             animator.SetBool("IsJumping", false);
         }
+        
 
         
         bluemove.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, bluemove.velocity.y);
