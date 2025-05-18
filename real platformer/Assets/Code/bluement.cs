@@ -45,16 +45,18 @@ public class bluement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "End")
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "End")
         {
             Debug.Log("WOOOOOO");
             SceneManager.LoadScene("Level " + (level + 1), LoadSceneMode.Single);
         }
-        if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "JumpHat")
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat")
         {
-            animator.SetBool("JumpHat", true);
             hat = "Jump";
-            Destroy(collision.gameObject);
+            thrown = collision.gameObject;
+            collision.gameObject.GetComponent<Follow>().targetObj = transform;
+            collision.gameObject.GetComponent<Follow>().player = this.gameObject;
+            //Destroy(collision.gameObject);
         }
     }
 
@@ -95,7 +97,6 @@ public class bluement : MonoBehaviour
         //Jumping
         if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
-            animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
         }
 
@@ -103,15 +104,16 @@ public class bluement : MonoBehaviour
         if (hat != "None" && Input.GetKeyDown(KeyCode.X))
         {
             hat = "None";
-            animator.SetBool("JumpHat", false);
+            Destroy(thrown);
             thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
         }
         if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
         {
             hat = "None";
-            animator.SetBool("JumpHat", false);
+            Destroy(thrown);
             thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
             thrown.GetComponent<Throw>().speed = thrown.GetComponent<Throw>().speed * -1;
+            
         }
         //Ground Check
         if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)

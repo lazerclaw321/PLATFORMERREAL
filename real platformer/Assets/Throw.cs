@@ -5,21 +5,24 @@ using UnityEngine;
 public class Throw : MonoBehaviour
 {
     public Rigidbody2D hatBody;
+    public BoxCollider2D hitbox;
     public float speed = 1;
+    public float height = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(launch());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator launch()
     {
-        if (!(hatBody.velocity.y < 0.01f && hatBody.velocity.y > -0.01f))
+        if (!(speed == 0))
         {
-            transform.position = new Vector3(transform.position.x + speed/100, transform.position.y, transform.position.z);
-            //hatBody.velocity = Vector2.left * speed;
+            hitbox.enabled = false;
+            hatBody.velocity = Vector2.left * speed + Vector2.up * height;
+            yield return new WaitForSeconds(0.05f);
+            hitbox.enabled = true;
         }
     }
 }

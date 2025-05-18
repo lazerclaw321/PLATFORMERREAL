@@ -17,9 +17,10 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetComponent<bluement>().hat == "Jump" )
+        if (targetObj && player && player.GetComponent<bluement>().hat == "Jump" )
         {
-            transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 10 * Time.deltaTime);
+            transform.position = targetObj.position;
+            //transform.position = Vector3.MoveTowards(this.transform.position, targetObj.position, 10 * Time.deltaTime);
         }
     }
 }
