@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2144814950072791779}
   - component: {fileID: 6653649731261106041}
   - component: {fileID: 8352241435428145889}
+  - component: {fileID: 8535904438202636192}
   m_Layer: 0
   m_Name: JumpHat
   m_TagString: JumpHat
@@ -219,3 +220,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8535904438202636192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064393387675564498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b15c339e4aac214aad3cdfd653367dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 0}
