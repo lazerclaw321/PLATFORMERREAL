@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hatBody: {fileID: 8352241435428145889}
-  speed: 10
+  speed: 15
 --- !u!50 &8352241435428145889
 Rigidbody2D:
   serializedVersion: 4

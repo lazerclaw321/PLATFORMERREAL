@@ -48,8 +48,7 @@ public class bluement : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "End")
         {
             Debug.Log("WOOOOOO");
-            level++;
-            SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
+            SceneManager.LoadScene("Level " + (level + 1), LoadSceneMode.Single);
         }
         if (Input.GetKey(KeyCode.DownArrow) && collision.tag == "JumpHat")
         {
@@ -65,6 +64,10 @@ public class bluement : MonoBehaviour
         {
             Debug.Log("WOOOOO");
             Physics2D.IgnoreCollision(hitbox, collision.gameObject.GetComponent<Collider2D>());
+        }
+        if (collision.gameObject.tag == "Killbricks")
+        {
+            Die();
         }
     }
 
