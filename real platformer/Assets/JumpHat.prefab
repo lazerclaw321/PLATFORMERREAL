@@ -192,7 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hatBody: {fileID: 8352241435428145889}
-  speed: 15
+  hitbox: {fileID: 8035976230162323084}
+  speed: -5
+  height: 3
 --- !u!50 &8352241435428145889
 Rigidbody2D:
   serializedVersion: 4
@@ -233,3 +235,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObj: {fileID: 0}
+  player: {fileID: 0}
