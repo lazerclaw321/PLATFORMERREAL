@@ -97,6 +97,7 @@ public class bluement : MonoBehaviour
         //Jumping
         if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
         {
+            animator.SetBool("IsJumping", true);
             bluemove.velocity = Vector2.up * jumpStregnth;
         }
 
@@ -116,7 +117,7 @@ public class bluement : MonoBehaviour
             
         }
         //Ground Check
-        if (bluemove.velocity.y < 0.01f && bluemove.velocity.y > -0.01f)
+        if (bluemove.velocity.y < 0.2f && bluemove.velocity.y > -0.2f)
         {
             animator.SetBool("IsJumping", false);
             grounded = true;
