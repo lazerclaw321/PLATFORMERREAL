@@ -8,7 +8,6 @@ public class bluement : MonoBehaviour
 {
 
     public Rigidbody2D bluemove;
-    public Transform spawn;
     public Animator animator;
     public BoxCollider2D hitbox;
 
@@ -118,6 +117,7 @@ public class bluement : MonoBehaviour
             thrown.GetComponent<Throw>().ignore = hitbox;
 
         }
+
         //Ground Check
         if (bluemove.velocity.y < 0.2f && bluemove.velocity.y > -0.2f)
         {
@@ -127,6 +127,12 @@ public class bluement : MonoBehaviour
         else
         {
             grounded = false;
+        }
+
+        //Reset
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Die();
         }
 
         //Horizontal Movement

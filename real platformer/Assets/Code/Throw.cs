@@ -13,9 +13,11 @@ public class Throw : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.IgnoreCollision(hitbox, ignore);
-        hatBody.velocity = Vector2.left * speed + Vector2.up * height;
-        
+        if (ignore)
+        {
+            Physics2D.IgnoreCollision(hitbox, ignore);
+            hatBody.velocity = Vector2.left * speed + Vector2.up * height;
+        }
         //StartCoroutine(launch());
     }
 
