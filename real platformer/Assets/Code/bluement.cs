@@ -107,6 +107,7 @@ public class bluement : MonoBehaviour
             hat = "None";
             Destroy(thrown);
             thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
+            thrown.GetComponent<Throw>().ignore = hitbox;
         }
         if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
         {
@@ -114,7 +115,8 @@ public class bluement : MonoBehaviour
             Destroy(thrown);
             thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
             thrown.GetComponent<Throw>().speed = thrown.GetComponent<Throw>().speed * -1;
-            
+            thrown.GetComponent<Throw>().ignore = hitbox;
+
         }
         //Ground Check
         if (bluemove.velocity.y < 0.2f && bluemove.velocity.y > -0.2f)
