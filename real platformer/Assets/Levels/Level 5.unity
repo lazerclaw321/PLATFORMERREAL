@@ -1156,7 +1156,7 @@ Animator:
   m_GameObject: {fileID: 1033639072}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f261b4bd2fd445c4a9ae3f3480f909cb, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1305,17 +1305,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 448137412245079016, guid: 775fbe20850504c499dd0d8a46c4d38d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05612cb746b4afe418c52ca75c36f108, type: 3}
     - target: {fileID: 665140342691451551, guid: 775fbe20850504c499dd0d8a46c4d38d, type: 3}
       propertyPath: m_Name
       value: Red House
       objectReference: {fileID: 0}
     - target: {fileID: 4492541518271134238, guid: 775fbe20850504c499dd0d8a46c4d38d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.93
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 4492541518271134238, guid: 775fbe20850504c499dd0d8a46c4d38d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 4492541518271134238, guid: 775fbe20850504c499dd0d8a46c4d38d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1780,7 +1784,7 @@ PrefabInstance:
     - target: {fileID: 1867767149892106279, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1756719697, guid: 631d0ace69ecc70428986f476cbb643e, type: 3}
+      objectReference: {fileID: -399795012, guid: a59cba9a0c974b94985b3fdb55999f4b, type: 3}
     - target: {fileID: 3088195795368664998, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: m_Name
       value: Player Red
@@ -2136,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546468694318485321, guid: 9171262a5b5f5d2409cbaf711a444392, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07035683
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7546468694318485321, guid: 9171262a5b5f5d2409cbaf711a444392, type: 3}
       propertyPath: m_LocalRotation.w
