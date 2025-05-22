@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +20,8 @@ public class bluement : MonoBehaviour
     public float throwspeed;
 
     public int level;
+    public bool active = true;
+    public GameObject house;
 
     bool grounded = false;
     GameObject thrown;
@@ -42,13 +44,25 @@ public class bluement : MonoBehaviour
         SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "End")
+        {
+            house = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "End")
+        {
+            house = null;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "End")
-        {
-            Debug.Log("WOOOOOO");
-            SceneManager.LoadScene("Level " + (level + 1), LoadSceneMode.Single);
-        }
+        
         if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat")
         {
             hat = "Jump";
@@ -81,43 +95,6 @@ public class bluement : MonoBehaviour
             Die();
         }
 
-        if (hat == "None")
-        {
-            hitbox.size = baseSize;
-            hitbox.offset = baseOffset;
-        }
-        else
-        {
-            hitbox.size = new Vector2(baseSize.x, baseSize.y * 1.75f);
-            hitbox.offset = new Vector2(baseOffset.x, -(baseOffset.y + (baseSize.y / 1.75f) + 0.48f));
-        }
-
-        //Hat Effects
-        //Jumping
-        if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
-        {
-            animator.SetBool("IsJumping", true);
-            bluemove.velocity = Vector2.up * jumpStregnth;
-        }
-
-        //Throw Hat
-        if (hat != "None" && Input.GetKeyDown(KeyCode.X))
-        {
-            hat = "None";
-            Destroy(thrown);
-            thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
-            thrown.GetComponent<Throw>().ignore = hitbox;
-        }
-        if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
-        {
-            hat = "None";
-            Destroy(thrown);
-            thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
-            thrown.GetComponent<Throw>().speed = thrown.GetComponent<Throw>().speed * -1;
-            thrown.GetComponent<Throw>().ignore = hitbox;
-
-        }
-
         //Ground Check
         if (bluemove.velocity.y < 0.2f && bluemove.velocity.y > -0.2f)
         {
@@ -129,14 +106,61 @@ public class bluement : MonoBehaviour
             grounded = false;
         }
 
-        //Reset
-        if (Input.GetKeyDown(KeyCode.R))
+        if (hat == "None")
         {
-            Die();
+            hitbox.size = baseSize;
+            hitbox.offset = baseOffset;
+        }
+        else
+        {
+            hitbox.size = new Vector2(baseSize.x, baseSize.y * 1.75f);
+            hitbox.offset = new Vector2(baseOffset.x, -(baseOffset.y + (baseSize.y / 1.75f) + 0.48f));
         }
 
-        //Horizontal Movement
-        bluemove.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, bluemove.velocity.y);
+        //Can only do these actions if being controlled
+        if (active)
+        {
+            //Hat Effects
+            //Jumping
+            if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
+            {
+                animator.SetBool("IsJumping", true);
+                bluemove.velocity = Vector2.up * jumpStregnth;
+            }
 
+            //Throw Hat
+            if (hat != "None" && Input.GetKeyDown(KeyCode.X))
+            {
+                hat = "None";
+                Destroy(thrown);
+                thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
+                thrown.GetComponent<Throw>().ignore = hitbox;
+            }
+            if (hat != "None" && Input.GetKeyDown(KeyCode.Z))
+            {
+                hat = "None";
+                Destroy(thrown);
+                thrown = Instantiate(jumpHatObject, transform.position, Quaternion.identity);
+                thrown.GetComponent<Throw>().speed = thrown.GetComponent<Throw>().speed * -1;
+                thrown.GetComponent<Throw>().ignore = hitbox;
+
+            }
+
+            //Reset
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Die();
+            }
+
+            //Horizontal Movement
+            bluemove.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, bluemove.velocity.y);
+        }
+        else
+        {
+            if (grounded)
+            {
+                bluemove.velocity = new Vector2(0, 0);
+            }
+        }
     }
 }
