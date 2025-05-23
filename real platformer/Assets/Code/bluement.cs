@@ -63,7 +63,7 @@ public class bluement : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         
-        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat")
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat" && active)
         {
             hat = "Jump";
             thrown = collision.gameObject;
@@ -158,8 +158,8 @@ public class bluement : MonoBehaviour
         else
         {
             if (grounded)
-            {
-                bluemove.velocity = new Vector2(0, 0);
+            { 
+                bluemove.velocity = new Vector2(0, bluemove.velocity.y);
             }
         }
     }

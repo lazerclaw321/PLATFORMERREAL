@@ -172,6 +172,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bluemove: {fileID: 4731996793890227477}
+  animator: {fileID: 0}
+  hitbox: {fileID: 0}
   jumpStregnth: 5
   speed: 4
   gravitydown: 0
+  hat: None
+  jumpHatObject: {fileID: 0}
+  throwspeed: 0
+  level: 0
+  active: 1
+  house: {fileID: 0}
