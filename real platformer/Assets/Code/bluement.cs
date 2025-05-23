@@ -122,9 +122,10 @@ public class bluement : MonoBehaviour
         {
             //Hat Effects
             //Jumping
-            if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded)
+            if (hat == "Jump" && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && grounded && active)
             {
                 animator.SetBool("IsJumping", true);
+                animator.SetBool("IsJumpin", true);
                 bluemove.velocity = Vector2.up * jumpStregnth;
             }
 
