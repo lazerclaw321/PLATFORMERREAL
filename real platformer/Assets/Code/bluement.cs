@@ -65,11 +65,17 @@ public class bluement : MonoBehaviour
         
         if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat" && active)
         {
-            hat = "Jump";
-            thrown = collision.gameObject;
-            collision.gameObject.GetComponent<Follow>().targetObj = transform;
-            collision.gameObject.GetComponent<Follow>().player = this.gameObject;
-            //Destroy(collision.gameObject);
+            //check if player is not under a block
+            RaycastHit2D hitLeft = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) - new Vector2(hitbox.size.x / 2, 0), Vector2.up);
+            RaycastHit2D hitRight = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) + new Vector2(hitbox.size.x / 2, 0), Vector2.up);
+            if ((!hitLeft || Mathf.Abs(hitLeft.point.y - transform.position.y) > hitbox.size.y) && (!hitRight || Mathf.Abs(hitRight.point.y - transform.position.y) > hitbox.size.y))
+            {
+                hat = "Jump";
+                thrown = collision.gameObject;
+                collision.gameObject.GetComponent<Follow>().targetObj = transform;
+                collision.gameObject.GetComponent<Follow>().player = this.gameObject;
+            }
+            
         }
     }
 
