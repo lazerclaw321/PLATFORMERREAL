@@ -8,6 +8,7 @@ TagManager:
   - Hat
   - JumpHat
   - Killbricks
+  - Logic
   layers:
   - Default
   - TransparentFX

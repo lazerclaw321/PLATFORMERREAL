@@ -19,9 +19,9 @@ public class bluement : MonoBehaviour
     public GameObject jumpHatObject;
     public float throwspeed;
 
-    public int level;
     public bool active = true;
     public GameObject house;
+    GameObject logic;
 
     bool grounded = false;
     GameObject thrown;
@@ -32,16 +32,16 @@ public class bluement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        logic = GameObject.FindGameObjectsWithTag("Logic")[0];
         baseSize = hitbox.size;
         baseOffset = hitbox.offset;
         Debug.Log(baseSize);
-        //SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
     }
 
     void Die()
     {
         hat = "None";
-        SceneManager.LoadScene("Level " + level, LoadSceneMode.Single);
+        logic.GetComponent<Logic>().reset = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

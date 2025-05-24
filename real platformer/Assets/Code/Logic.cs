@@ -9,6 +9,8 @@ public class Logic : MonoBehaviour
     public GameObject[] players;
     public GameObject[] houses;
     public int level;
+    public string type = "";
+    public bool reset = false;
     int chosen = 0;
 
     // Start is called before the first frame update
@@ -24,6 +26,11 @@ public class Logic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (reset)
+        {
+            SceneManager.LoadScene("Level " + level + type, LoadSceneMode.Single);
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             
@@ -51,7 +58,7 @@ public class Logic : MonoBehaviour
             Debug.Log(check);
             if (check)
             {
-                SceneManager.LoadScene("Level " + (level + 1), LoadSceneMode.Single);
+                SceneManager.LoadScene("Level " + (level + 1) + type, LoadSceneMode.Single);
             }
         }
     }
