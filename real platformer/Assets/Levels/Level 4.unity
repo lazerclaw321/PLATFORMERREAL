@@ -1056,6 +1056,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d33e34d76799e3646886c58eda29652d, type: 3}
+--- !u!1 &831146168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7393521536863868048, guid: d33e34d76799e3646886c58eda29652d, type: 3}
+  m_PrefabInstance: {fileID: 831146167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1130269932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,7 +1834,7 @@ PrefabInstance:
     - target: {fileID: 4219328490645793896, guid: 6edcdf399a550a041a1013377f9396ab, type: 3}
       propertyPath: houses.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 831146168}
     - target: {fileID: 4219328490645793896, guid: 6edcdf399a550a041a1013377f9396ab, type: 3}
       propertyPath: players.Array.data[0]
       value: 
