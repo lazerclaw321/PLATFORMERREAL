@@ -66,8 +66,8 @@ public class bluement : MonoBehaviour
         if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "JumpHat" && active)
         {
             //check if player is not under a block
-            RaycastHit2D hitLeft = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) - new Vector2(hitbox.size.x / 4, 0), Vector2.up);
-            RaycastHit2D hitRight = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) + new Vector2(hitbox.size.x / 4, 0), Vector2.up);
+            RaycastHit2D hitLeft = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) - new Vector2(hitbox.size.x / 5, 0), Vector2.up);
+            RaycastHit2D hitRight = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y) + new Vector2(hitbox.size.x / 5, 0), Vector2.up);
             if ((!hitLeft || Mathf.Abs(hitLeft.point.y - transform.position.y) > hitbox.size.y * 0.5f) && (!hitRight || Mathf.Abs(hitRight.point.y - transform.position.y) > hitbox.size.y * 0.5f))
             {
                 hat = "Jump";
