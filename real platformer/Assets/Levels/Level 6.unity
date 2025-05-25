@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3488240234021021229, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3488240234021021229, guid: 756c22319454ba04e9aedba929a64118, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1392,14 +1392,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503289199}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Mass: 1000000
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: e513f217125dec04aab9a553943e1784, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1407,9 +1407,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!1 &1663870954 stripped
 GameObject:
@@ -1453,7 +1453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 996118756599104666, guid: e026328dd75b3c84f8bcfb93ba984f74, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 996118756599104666, guid: e026328dd75b3c84f8bcfb93ba984f74, type: 3}
       propertyPath: m_LocalPosition.y
