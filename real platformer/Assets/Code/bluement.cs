@@ -119,8 +119,8 @@ public class bluement : MonoBehaviour
         }
         else
         {
-            hitbox.size = new Vector2(baseSize.x, baseSize.y * 1.75f);
-            hitbox.offset = new Vector2(baseOffset.x, -(baseOffset.y + (baseSize.y / 1.75f) + 0.16f));
+            hitbox.size = new Vector2(baseSize.x, baseSize.y * 1.28f);
+            hitbox.offset = new Vector2(baseOffset.x, -(baseOffset.y + (baseSize.y / 1.28f) + 0.16f));
         }
 
         //Can only do these actions if being controlled
