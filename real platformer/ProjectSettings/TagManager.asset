@@ -10,6 +10,7 @@ TagManager:
   - Killbricks
   - Logic
   - MoveableObject
+  - Lever
   layers:
   - Default
   - TransparentFX
