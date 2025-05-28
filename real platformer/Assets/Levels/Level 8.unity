@@ -1280,7 +1280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219328490645793896, guid: 6edcdf399a550a041a1013377f9396ab, type: 3}
       propertyPath: level
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4219328490645793896, guid: 6edcdf399a550a041a1013377f9396ab, type: 3}
       propertyPath: houses.Array.size
@@ -2128,7 +2128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242563338289983788, guid: b82520f76bed2b4488c6482db628cd1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 2242563338289983788, guid: b82520f76bed2b4488c6482db628cd1c, type: 3}
       propertyPath: m_LocalPosition.z
