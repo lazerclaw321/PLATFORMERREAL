@@ -77,6 +77,11 @@ public class bluement : MonoBehaviour
             }
             
         }
+
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && collision.tag == "Lever" && active)
+        {
+            collision.gameObject.GetComponent<LeverScript>().swap = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
