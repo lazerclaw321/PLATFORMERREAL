@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LeverScript : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
+
     public string colorOn = "R";
     public string colorOff = "N";
     public bool on = false;
@@ -29,6 +32,15 @@ public class LeverScript : MonoBehaviour
                 prev = Time.time;
             }
             swap = false;
+        }
+
+        if (on)
+        {
+            spriteRenderer.sprite = sprites[1];
+        }
+        else
+        {
+            spriteRenderer.sprite = sprites[0];
         }
     }
 }
