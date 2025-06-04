@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -42,6 +43,10 @@ public class Logic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             bool check = true;
+            if (type == "Select" && players[0].GetComponent<bluement>().house)
+            {
+                SceneManager.LoadScene(players[0].GetComponent<bluement>().house.name, LoadSceneMode.Single);
+            }
             for (int i = 0; i < players.Length; i++)
             {
                 if (players[i].GetComponent<bluement>().house)
@@ -56,9 +61,10 @@ public class Logic : MonoBehaviour
                 }
             }
             Debug.Log(check);
-            if (check)
+            if (check && !(type == "Select"))
             {
-                SceneManager.LoadScene("Level " + (level + 1) + type, LoadSceneMode.Single);
+                SceneManager.LoadScene("Level 0Select", LoadSceneMode.Single);
+                //SceneManager.LoadScene("Level " + (level + 1) + type, LoadSceneMode.Single);
             }
         }
     }
